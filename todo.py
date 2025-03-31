@@ -1,3 +1,39 @@
+import sys
+import subprocess
+import os
+
+def is_package_installed(package):
+    """Vericação dos pacotes em "requirements.txt". """
+    try:
+        subprocess.run(
+            [sys.executable, "-m", "pip", "show", package],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            check=True
+        )
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+def check_and_install(package):
+    """Se não tiver instalado, vai instalar aqui."""
+    package_name = package.split("==")[0]  # Remove a versão para verificar apenas o nome
+    if not is_package_installed(package_name):
+        print(f"Pacote '{package}' não encontrado. Instalando...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    else:
+        print(f"Pacote '{package}' já está instalado.")
+
+# Checa se requirements.txt existe
+req_file = "requirements.txt"
+if os.path.exists(req_file):
+    with open(req_file, "r") as f:
+        required_packages = [line.strip() for line in f if line.strip()]
+
+    for package in required_packages:
+        check_and_install(package)
+else:
+    print(f"Arquivo '{req_file}' não encontrado. Certifique-se de que o arquivo existe na pasta.")
+
 import flet as ft
 import sqlite3
 
@@ -67,7 +103,7 @@ class ToDo:
                             value=res[1] == 'complete'
                         ),
                         ft.IconButton(
-                            icon=ft.icons.DELETE,
+                            icon=ft.Icons.DELETE,
                             icon_color=ft.Colors.RED,
                             data=res[0],
                             on_click=lambda e: self.delete_task(e.control.data)
