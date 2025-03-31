@@ -1,13 +1,13 @@
 # N704 - Programação Funcional
 
 # Grupo 38
-   # Adline Alves - 2313557 - Documentação e levantamento de requisitos
-   # Alano Dantas - 2222891 - Testes funcionais
-   # Levi Ribeiro - 2317790 - Desenvolvimento
-   # Matheus Pinheiro - 2314205 - Desenvolvimento
+    Adline Alves - 2313557 - Documentação e levantamento de requisitos
+    Alano Dantas - 2222891 - Testes funcionais
+    Levi Ribeiro - 2317790 - Desenvolvimento
+    Matheus Pinheiro - 2314205 - Desenvolvimento
 
 # Introdução
-    Este documento apresenta o relatório e levantamento dos objetivos do projeto de Programação Funcional. O projeto consiste no desenvolvimento de um gerenciador de tarefas em Python, utilizando os conceitos abordados na disciplina. O gerenciador será desenvolvido com Python, Flet e SQLite, permitindo adicionar, visualizar, atualizar o status e excluir tarefas.
+    Documento apresentando relatório e levantamento dos objetivos do projeto de Programação Funcional. O projeto consiste no desenvolvimento de um gerenciador de tarefas em Python, utilizando os conceitos abordados na disciplina. O gerenciador será desenvolvido com Python, Flet e SQLite, permitindo adicionar, visualizar, atualizar o status e excluir tarefas.
 
 # Objetivo do Sistema
     O sistema deve permitir a criação, listagem, filtragem e remoção de tarefas, com foco na utilização dos conceitos de programação funcional definidos na proposta da atividade.
